@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    scroll-behavior: smooth;
+    font-family: "Manrope", sans-serif;
+}
+
+
+.layout {
+    display: flex;
+    /* Включаем Flexbox: элементы встают в ряд */
+    min-height: calc(100vh - 24px);
+    /* Высота во весь экран (100% viewport height) */
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 250px;
+    /* Фиксированная ширина меню */
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    flex-shrink: 0;
+    /* Запрещаем меню сжиматься */
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    /* Убираем маркеры списка */
+}
+
+.sidebar li {
+    margin-bottom: 12px;
+}
+
+.sidebar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+}
+
+/* 4. Основная область (Контент) */
+.main-content {
+    flex: 1;
+    /* Занимает ВСЁ оставшееся свободное место */
+    padding: 30px;
+    background-color: #f8f9fa;
+}
