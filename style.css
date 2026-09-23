@@ -9,6 +9,11 @@
     font-family: "Manrope", sans-serif;
 }
 
+button {
+    background-color: #2c3e50;
+    border: 0;
+}
+
 
 .layout {
     display: flex;
@@ -26,6 +31,17 @@
     padding: 20px;
     flex-shrink: 0;
     /* Запрещаем меню сжиматься */
+}
+
+.topper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.topper button {
+    width: 48px;
+    height: 48px;
 }
 
 .sidebar h2 {
@@ -60,4 +76,10 @@
     /* Занимает ВСЁ оставшееся свободное место */
     padding: 30px;
     background-color: #f8f9fa;
+}
+
+footer {
+    display: flex;
+    min-height: 24px;
+    justify-content: center;
 }
