@@ -1,0 +1,5 @@
+fastapi
+flask_sqlalchemy
+sqlalchemy
+uvicorn
+datetime
