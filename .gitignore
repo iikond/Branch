@@ -113,3 +113,5 @@ doctrees/
 .env.local
 .env.*.local
 
+# Databases
+*.db

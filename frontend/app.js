@@ -1,10 +1,10 @@
 // Карта соответствия хэшей и файлов
 const routes = {
-    '#board': 'pages/board.html',
-    '#chats': 'pages/chats.html',
-    '#tasks': 'pages/tasks.html',
-    '#notes': 'pages/notes.html',
-    '#events': 'pages/events.html'
+    '#board': './pages/board.html',
+    '#chats': './pages/chats.html',
+    '#tasks': './pages/tasks.html',
+    '#notes': './pages/notes.html',
+    '#events': './pages/events.html'
 };
 
 const mainContainer = document.getElementById('app-content');
