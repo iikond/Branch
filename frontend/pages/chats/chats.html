@@ -3,14 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-
-    <title>Branch</title>
+    <title>Простой Чат</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="chats.css">
 </head>
 
 <body>
-
     <div class="layout">
         <!-- Левое меню -->
         <aside class="sidebar">
@@ -27,20 +25,23 @@
             </ul>
         </aside>
 
-        <!-- Основной контент -->
         <main class="main-content" id="app-content">
-            <div class="loader">Загрузка...</div>
+
+            <div class="chats">
+            <h1>💬 Простой WebSocket Чат</h1>
+            <div id="status">🔴 Подключение недоступно (запустите бэкенд)</div>
+            <div id="messages"></div>
+            <div class="input-area">
+                <input type="text" id="message-input" placeholder="Введите сообщение...">
+                <button onclick="sendMessage()">➤</button>
+            </div>
+
+            </div>
         </main>
+
     </div>
+    <script src="chats.js"></script>
 
-    <footer>
-        <p>
-            сделано Redline Tech (одним 14-летним парнем),
-            при помощи чая и веры в open source
-        </p>
-    </footer>
-
-    <script src="app.js"></script>
 </body>
 
 </html>
