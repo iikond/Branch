@@ -77,7 +77,7 @@ h1 {
     font-size: 14px;
 }
 
-button {
+.send-message {
     padding: 10px 20px;
     background: #007bff;
     color: white;

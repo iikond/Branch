@@ -14,7 +14,7 @@
 
     ws.onopen = () => {
         console.log('✅ Подключено к WebSocket');
-        statusDiv.textContent = '🟢 Подключено (ID: ' + generateUUID() + ')';
+        statusDiv.textContent = '🟢 Подключено';
         statusDiv.style.background = '#d4edda';
         input.focus();
     };
@@ -36,10 +36,6 @@
         statusDiv.style.background = '#f8d7da';
     };
 
-    function generateUUID() {
-        return Math.random().toString(36).substring(2, 10);
-    }
-
     function addMessage(text, type) {
         const div = document.createElement('div');
         div.className = 'message ' + type;
@@ -55,7 +51,6 @@
         if (!msg) return;
         
         input.value = '';
-        addMessage(msg, 'user');
         ws.send(msg);
     }
 

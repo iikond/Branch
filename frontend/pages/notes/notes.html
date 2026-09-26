@@ -1,6 +1,49 @@
-<div class="page-content">
-    <h1>Заметки</h1>
-    
-    <h2>In developement.</h2>
-    <ul id="note-list"></ul>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+
+    <title>Branch</title>
+</head>
+
+<body>
+
+    <div class="layout">
+        <!-- Левое меню -->
+        <aside class="sidebar">
+            <div class="topper">
+                <h2>Branch</h2>
+                <button id="toggle-btn">Скрыть меню</button>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="../board/board.html">Доска</a></li>
+                <li><a href="../chats/chats.html">Чаты</a></li>
+                <li><a href="../tasks/tasks.html">Задачи</a></li>
+                <li><a href="../notes/notes.html">Заметки</a></li>
+                <li><a href="../events/events.html">Мероприятия</a></li>
+            </ul>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content" id="app-content">
+            <div class="board">
+                <h1>In development</h1>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>
+            сделано Redline Tech (одним 14-летним парнем),
+            при помощи чая и веры в open source
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="pages/chats/chats.js"></script>
+</body>
+
+</html>
