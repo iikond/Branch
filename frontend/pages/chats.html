@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Простой Чат</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="chats.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/chats.css">
 </head>
 
 <body>
@@ -17,19 +17,19 @@
                 <button id="toggle-btn">Скрыть меню</button>
             </div>
             <ul id="nav-menu">
-                <li><a href="../board/board.html">Доска</a></li>
-                <li><a href="../chats/chats.html">Чаты</a></li>
-                <li><a href="../tasks/tasks.html">Задачи</a></li>
-                <li><a href="../notes/notes.html">Заметки</a></li>
-                <li><a href="../events/events.html">Мероприятия</a></li>
+                <li><a href="/board">Доска</a></li>
+                <li><a href="/chats">Чаты</a></li>
+                <li><a href="/tasks">Задачи</a></li>
+                <li><a href="/notes">Заметки</a></li>
+                <li><a href="/events">Мероприятия</a></li>
             </ul>
         </aside>
 
         <main class="main-content" id="app-content">
 
             <div class="chats">
-            <h1>💬 Простой WebSocket Чат</h1>
-            <div id="status">🔴 Подключение недоступно (запустите бэкенд)</div>
+            <h1>Тестовый чат</h1>
+            <div id="status">Подключение недоступно (запустите бэкенд)</div>
             <div id="messages"></div>
             <div class="input-area">
                 <input type="text" id="message-input" placeholder="Введите сообщение...">
@@ -40,7 +40,8 @@
         </main>
 
     </div>
-    <script src="chats.js"></script>
+    <script src="/static/chats.js"></script>
+    <script src="/static/app.js"></script>
 
 </body>
 

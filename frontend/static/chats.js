@@ -13,26 +13,26 @@
     const input = document.getElementById('message-input');
 
     ws.onopen = () => {
-        console.log('✅ Подключено к WebSocket');
-        statusDiv.textContent = '🟢 Подключено';
+        console.log('Подключено к WebSocket');
+        statusDiv.textContent = 'Подключено';
         statusDiv.style.background = '#d4edda';
         input.focus();
     };
 
     ws.onmessage = (event) => {
         addMessage(event.data, 'user');
-        console.log('📩 Получено:', event.data);
+        console.log('Получено:', event.data);
     };
 
     ws.onerror = () => {
-        console.error('❌ Ошибка WebSocket');
-        statusDiv.textContent = '🔴 Ошибка подключения к серверу';
+        console.error('Ошибка WebSocket');
+        statusDiv.textContent = 'Ошибка подключения к серверу';
         statusDiv.style.background = '#f8d7da';
     };
 
     ws.onclose = () => {
-        console.log('⚠️ Отключено (обновите страницу)');
-        statusDiv.textContent = '🔴 Отключено (запустите бэкенд и обновите)';
+        console.log('Отключено (обновите страницу)');
+        statusDiv.textContent = 'Отключено (запустите бэкенд и обновите)';
         statusDiv.style.background = '#f8d7da';
     };
 

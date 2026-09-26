@@ -1,13 +1,17 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, APIRouter
 import random
 import sqlite3
 import time
+from pathlib import Path
 from datetime import datetime
 
-app = FastAPI()
+router = APIRouter()
 
-# Простая БД SQLite
-conn = sqlite3.connect("chat.db", check_same_thread=False)
+BASE_DIR = Path(__file__).resolve().parent
+database = BASE_DIR.parent / "database" / "db.db"
+
+# Инициализируем БД SQLite
+conn = sqlite3.connect(database, check_same_thread=False)
 cur = conn.cursor()
 cur.execute("""
 CREATE TABLE IF NOT EXISTS messages (
@@ -23,7 +27,7 @@ conn.commit()
 online = {}
 
 
-@app.websocket("/ws/chat")
+@router.websocket("/chat")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
 
@@ -32,8 +36,8 @@ async def websocket_endpoint(websocket: WebSocket):
     online[user_id] = websocket
     
     try:
-        # 🟢 ОТПРАВЛЯЕМ ВСЕ ИСТОРИЧЕСКИЕ СООБЩЕНИЯ ПРИБЫТИЮ!
-        await broadcast(f"🟢 Подключено (ID: {user_id})")
+        # ОТПРАВЛЯЕМ ВСЕ ИСТОРИЧЕСКИЕ СООБЩЕНИЯ ПРИБЫТИЮ!
+        await broadcast(f"Подключено (ID: {user_id})")
         
         # Загружаем всю историю сообщений из БД
         cur.execute("SELECT user_id, text, created_at FROM messages ORDER BY created_at ASC")
