@@ -8,10 +8,12 @@ from datetime import datetime
 router = APIRouter()
 
 BASE_DIR = Path(__file__).resolve().parent
-database = BASE_DIR.parent / "database" / "db.db"
+DB_DIR = BASE_DIR.parent / "database" / "db.db"
+
+DB_DIR.parent.mkdir(parents=True, exist_ok=True)
 
 # Инициализируем БД SQLite
-conn = sqlite3.connect(database, check_same_thread=False)
+conn = sqlite3.connect(DB_DIR, check_same_thread=False)
 cur = conn.cursor()
 cur.execute("""
 CREATE TABLE IF NOT EXISTS messages (
