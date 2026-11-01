@@ -1,0 +1,93 @@
+/* =========================
+   1. FONTS
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
+
+/* =========================
+   2. DESIGN TOKENS
+========================= */
+
+:root {
+    /* Colors */
+    --bg-primary: #0f1117;
+    --bg-secondary: #181b24;
+    --bg-tertiary: #222633;
+
+    --text-primary: #f1f3f5;
+    --text-secondary: #9299a8;
+
+    --accent: #7c83ff;
+    --border: #2b3040;
+
+    /* Typography */
+    --font-main: "Manrope", sans-serif;
+
+    /* Sizes */
+    --sidebar-width: 260px;
+    --header-height: 64px;
+
+    /* Effects */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+    --transition: 0.2s ease;
+    --transition-fast: 0.1s ease;
+}
+
+/* =========================
+   3. RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--font-main);
+    color-scheme: dark;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* =========================
+   4. GLOBAL ELEMENTS
+========================= */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* =========================
+   5. ROOT
+========================= */
+
+#root {
+    min-height: 100vh;
+}

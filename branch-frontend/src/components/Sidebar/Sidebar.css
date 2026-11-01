@@ -1,0 +1,36 @@
+.container {
+    border-right: solid 2px var(--border);
+    min-height: 100vh;
+}
+
+h2 {
+    font-size: xxx-large;
+    margin: 16px;
+    transition: var(--transition);
+}
+
+nav a {
+    margin: 8px;
+    transition: var(--transition);
+}
+
+a:hover {
+    transform: scale(1.1);
+    transition: var(--transition-fast);
+}
+
+aside {
+    display: block;
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 16px;
+
+        font-size: x-large;
+        font-weight: 600;
+    }
+
+    margin: 4px;
+}

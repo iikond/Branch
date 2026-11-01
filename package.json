@@ -1,0 +1,10 @@
+{
+  "name": "branch",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix branch-frontend\" \"python -m uvicorn backend.main:app --reload --port 8000\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

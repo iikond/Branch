@@ -1,0 +1,38 @@
+section {
+    margin: 32px;
+}
+
+.notes {
+    display: flex;
+    flex-direction: row;
+}
+
+.note {
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+
+    font-size: larger;
+
+    width: 240px;
+    height: 360px;
+
+    border: solid 2px var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 8px;
+
+    transition: var(--transition);
+}
+
+.note:hover {
+    transform: scale(1.1);
+    transition: var(--transition-fast);
+}
+
+.note p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 12;
+    line-clamp: 12;
+    overflow: hidden;
+}

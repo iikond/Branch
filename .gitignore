@@ -1,3 +1,6 @@
+node_modules/
+
+
 # Byte-code / pycache directories
 __pycache__/
 *.py[cod]
