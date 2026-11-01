@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .services import chat, pages
+from .services import chat, notes
 from pathlib import Path
 import sqlite3 as db
 
@@ -20,5 +20,9 @@ with get_db() as init_conn:
 
 app = FastAPI()
 
-app.include_router(chat.router, prefix="/ws")
-app.include_router(pages.router)
+app.include_router(chat.router, prefix="/api/ws")
+app.include_router(notes.router, prefix="/api/notes")
+
+@app.get("/api/test")
+async def test():
+    return {200:"OK"}

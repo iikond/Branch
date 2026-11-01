@@ -1,12 +1,11 @@
 from fastapi import APIRouter, status
 import sqlite3 as db
-import time
 from pathlib import Path
-from datetime import datetime
 from pydantic import BaseModel
 
 class Note(BaseModel):
     user_id: str
+    header: str
     text: str
 
 
@@ -25,6 +24,7 @@ with get_db() as init_conn:
     CREATE TABLE IF NOT EXISTS notes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id TEXT NOT NULL,
+        header TEXT NOT NULL,
         text TEXT NOT NULL
     )
     """)
@@ -33,7 +33,22 @@ with get_db() as init_conn:
 async def new_note(note: Note): #TODO: Refactor async db
     with get_db() as conn:
         conn.execute("""
-        INSERT INTO notes (user_id, text) VALUES (?, ?)
-        """, (note.user_id, note.text))
-
+        INSERT INTO notes (user_id, header, text) VALUES (?, ?, ?)
+        """, (note.user_id, note.header, note.text))
     return {"status": "ok"}
+
+@router.get("/all")
+def get_all_notes(user_id: str):
+    with get_db() as conn:
+        conn.row_factory = db.Row
+
+        notes = conn.execute(
+            """
+            SELECT id, header, text
+            FROM notes
+            WHERE user_id = ?
+            """,
+            (user_id,)
+        ).fetchall()
+
+    return [dict(note) for note in notes]
